@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sc-test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <!-- サイドバー：将来的に解説項目を追加可能 -->
+    <aside id="sidebar">
+      <h2>メニュー</h2>
+      <ul>
+        <li><a href="#" id="menu-sort">ソートアルゴリズム</a></li>
+        <!-- 例：<li><a href="#" id="menu-graph">グラフアルゴリズム</a></li> -->
+      </ul>
+    </aside>
+    <!-- メインコンテンツ -->
+    <main id="content">
+      <header>
+        <h1>ソートアルゴリズムのビジュアル解説</h1>
+      </header>
+      <section id="controls">
+        <label for="algorithm-select">アルゴリズム選択: </label>
+        <select id="algorithm-select">
+          <option value="bubble">バブルソート</option>
+          <option value="selection">選択ソート</option>
+          <option value="insertion">挿入ソート</option>
+          <option value="merge">マージソート</option>
+          <option value="quick">クイックソート</option>
+          <option value="heap">ヒープソート</option>
+          <option value="counting">計数ソート (未実装)</option>
+          <option value="radix">基数ソート (未実装)</option>
+          <option value="bucket">バケットソート (未実装)</option>
+        </select>
+        <button id="start-btn">開始</button>
+        <button id="reset-btn">リセット</button>
+      </section>
+      <section id="array-container">
+        <!-- ここにソート対象のバーが生成されます -->
+      </section>
+      <section id="description">
+        <h2>アルゴリズムの説明</h2>
+        <div id="algo-description">
+          アルゴリズムを選択して、開始ボタンを押してください。
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
