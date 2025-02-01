@@ -9,6 +9,23 @@ let animationInterval = null; // setInterval のハンドル
 // ・・・（ここに resetArray, renderArray, updateBar, highlightBars, removeHighlight,
 //       processAnimationStep, playAnimations, resetControls, setDescription などの関数を配置）・・・
 
+function resetArray() {
+  data = Array.from({ length: arraySize }, () => Math.floor(Math.random() * 100) + 1);
+  renderArray();
+}
+
+function renderArray() {
+  const arrayContainer = document.getElementById("array-container");
+  arrayContainer.innerHTML = "";
+  data.forEach((value, index) => {
+    const bar = document.createElement("div");
+    bar.className = "array-bar";
+    bar.style.height = `${value}%`;
+    bar.style.width = `${100 / arraySize}%`;
+    arrayContainer.appendChild(bar);
+  });
+}
+
 /* 各ソートアルゴリズムの実装もそのまま */
 // ① バブルソート、② 選択ソート、③ 挿入ソート、④ マージソート、⑤ クイックソート、⑥ ヒープソート
 // （以前提供したコードと同じ内容を配置してください）
