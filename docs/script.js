@@ -30,6 +30,36 @@ function renderArray() {
 // ① バブルソート、② 選択ソート、③ 挿入ソート、④ マージソート、⑤ クイックソート、⑥ ヒープソート
 // （以前提供したコードと同じ内容を配置してください）
 
+function bubbleSort() {
+  const n = data.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      animations.push(["compare", j, j + 1]);
+      if (data[j] > data[j + 1]) {
+        animations.push(["swap", j, j + 1]);
+        [data[j], data[j + 1]] = [data[j + 1], data[j]];
+      }
+      animations.push(["uncompare", j, j + 1]);
+    }
+  }
+}
+
+function processAnimationStep(step) {
+  const [action, index1, index2] = step;
+  const bars = document.getElementsByClassName("array-bar");
+  if (action === "compare") {
+    bars[index1].style.backgroundColor = "red";
+    bars[index2].style.backgroundColor = "red";
+  } else if (action === "swap") {
+    const tempHeight = bars[index1].style.height;
+    bars[index1].style.height = bars[index2].style.height;
+    bars[index2].style.height = tempHeight;
+  } else if (action === "uncompare") {
+    bars[index1].style.backgroundColor = "";
+    bars[index2].style.backgroundColor = "";
+  }
+}
+
 function playAnimations() {
   if (animations.length === 0) return;
   let i = 0;
