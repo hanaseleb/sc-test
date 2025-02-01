@@ -94,5 +94,6 @@ function initSortApp() {
 
   // 初期状態の設定
   resetArray();
+  renderArray(); // ここを追加
   setDescription("アルゴリズムを選択して、開始ボタンを押してください。");
 }
