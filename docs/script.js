@@ -30,12 +30,27 @@ function renderArray() {
 // ① バブルソート、② 選択ソート、③ 挿入ソート、④ マージソート、⑤ クイックソート、⑥ ヒープソート
 // （以前提供したコードと同じ内容を配置してください）
 
+function playAnimations() {
+  if (animations.length === 0) return;
+  let i = 0;
+  animationInterval = setInterval(() => {
+    if (i >= animations.length) {
+      clearInterval(animationInterval);
+      resetControls(true);
+      return;
+    }
+    processAnimationStep(animations[i]);
+    i++;
+  }, animationSpeed);
+}
+
 /* --- 以下、初期化関数 initSortApp の定義 --- */
 function initSortApp() {
   // 初期化：読み込んだメインコンテンツ内の要素に対してイベントリスナーを登録する
   document.getElementById("start-btn").addEventListener("click", function () {
     const algo = document.getElementById("algorithm-select").value;
     resetControls(false);
+    animations = []; // アニメーションステップをリセット
     if (algo === "bubble") {
       bubbleSort();
       setDescription(

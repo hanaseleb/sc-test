@@ -83,10 +83,11 @@ header {
 
 /* バーは10本なので、幅をやや広めに設定 */
 .bar {
-  width: 20px;
-  margin: 0 5px;
+  width: 10px; /* 幅を細く */
+  margin: 0 2px; /* マージンを調整 */
   background-color: #69c;
   transition: height 0.3s, background-color 0.3s;
+  border-radius: 5px; /* 角丸を追加 */
 }
 
 .array-bar {
@@ -94,6 +95,8 @@ header {
   margin: 0 1px;
   background-color: #3498db; /* バーの色を確認 */
   vertical-align: bottom;
+  width: 10px; /* 幅を細く */
+  border-radius: 5px; /* 角丸を追加 */
 }
 
 /* 説明エリア */
