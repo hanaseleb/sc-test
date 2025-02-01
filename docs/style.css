@@ -89,6 +89,13 @@ header {
   transition: height 0.3s, background-color 0.3s;
 }
 
+.array-bar {
+  display: inline-block;
+  margin: 0 1px;
+  background-color: #3498db;
+  vertical-align: bottom;
+}
+
 /* 説明エリア */
 #description {
   margin: 20px 0;
