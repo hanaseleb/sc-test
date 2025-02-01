@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.text())
     .then((html) => {
       document.getElementById("content").innerHTML = html;
-      // main-content.html の読み込み完了後に初期化関数を呼び出す
+      // ここで初期化処理を呼び出す
       if (typeof initSortApp === "function") {
         initSortApp();
       }
