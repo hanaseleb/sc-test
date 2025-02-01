@@ -92,7 +92,7 @@ header {
 .array-bar {
   display: inline-block;
   margin: 0 1px;
-  background-color: #3498db;
+  background-color: #3498db; /* バーの色を確認 */
   vertical-align: bottom;
 }
 
